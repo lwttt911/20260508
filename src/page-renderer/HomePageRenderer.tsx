@@ -123,11 +123,12 @@ function Hero({
   navigate: (pageId: PageId) => void;
   notify: (message: string) => void;
 }) {
-  const heroBg = resolveAssetUrl(section.style?.backgroundImage ?? "/hero-new.webp");
+  const rawBg = section.style?.backgroundImage?.trim() ?? "";
+  const heroBg = rawBg ? resolveAssetUrl(rawBg) : "";
   return (
     <section
       className="hero"
-      style={{ "--hero-image": `url("${heroBg}")` } as CSSProperties}
+      style={{ "--hero-image": heroBg ? `url("${heroBg}")` : "none" } as CSSProperties}
     >
       <div className="hero-copy">
         <div className="eyebrow">

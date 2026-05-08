@@ -14,7 +14,7 @@
         "order": 1,
         "style": {
           "height": 430,
-          "backgroundImage": "/hero-new.webp",
+          "backgroundImage": "",
           "accent": "cyan"
         },
         "content": {

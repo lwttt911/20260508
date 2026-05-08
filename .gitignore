@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.npm-cache/
+.superpowers/
+
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+
+# Local screenshots and visual check artifacts.
+/*.png

@@ -1,0 +1,67 @@
+{
+  "pageId": "ai-content",
+  "title": "AI 内容生产",
+  "navLabel": "AI 内容生产",
+  "status": "published",
+  "publishedVersion": "baseline-ai-content",
+  "layout": {
+    "type": "business-page",
+    "sections": [
+      {
+        "id": "overview",
+        "type": "business-overview",
+        "title": "AI 内容生产台",
+        "subtitle": "把 TOP 因子组合、SKU 卖点和素材要求组织成脚本、分镜与 Prompt",
+        "visible": true,
+        "order": 1,
+        "content": {
+          "primaryMetric": "7",
+          "primaryLabel": "待生成脚本",
+          "secondaryMetric": "3",
+          "secondaryLabel": "待确认分镜"
+        },
+        "actions": [
+          {
+            "id": "new-script",
+            "label": "生成新脚本",
+            "actionType": "runPresetAction",
+            "target": "new-script-package"
+          }
+        ]
+      },
+      {
+        "id": "production-workbench",
+        "type": "workflow",
+        "title": "生产工作台",
+        "visible": true,
+        "order": 2
+      }
+    ]
+  },
+  "fields": [
+    {
+      "id": "skuName",
+      "label": "SKU 名称",
+      "visible": true,
+      "tableColumn": true,
+      "filterable": true,
+      "required": true
+    },
+    {
+      "id": "topCombo",
+      "label": "TOP 组合",
+      "visible": true,
+      "tableColumn": true,
+      "filterable": true,
+      "required": true
+    },
+    {
+      "id": "scriptStatus",
+      "label": "脚本状态",
+      "visible": true,
+      "tableColumn": true,
+      "filterable": true,
+      "required": false
+    }
+  ]
+}

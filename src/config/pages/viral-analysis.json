@@ -1,0 +1,67 @@
+{
+  "pageId": "viral-analysis",
+  "title": "爆款分析",
+  "navLabel": "爆款分析",
+  "status": "published",
+  "publishedVersion": "baseline-viral-analysis",
+  "layout": {
+    "type": "business-page",
+    "sections": [
+      {
+        "id": "overview",
+        "type": "business-overview",
+        "title": "爆款分析队列",
+        "subtitle": "从视频证据提炼结构判断和可复用因子",
+        "visible": true,
+        "order": 1,
+        "content": {
+          "primaryMetric": "6",
+          "primaryLabel": "待分析视频",
+          "secondaryMetric": "2",
+          "secondaryLabel": "处理中"
+        },
+        "actions": [
+          {
+            "id": "import-video",
+            "label": "导入视频",
+            "actionType": "openModal",
+            "target": "import-video-modal"
+          }
+        ]
+      },
+      {
+        "id": "analysis-table",
+        "type": "table",
+        "title": "分析记录",
+        "visible": true,
+        "order": 2
+      }
+    ]
+  },
+  "fields": [
+    {
+      "id": "videoTitle",
+      "label": "视频标题",
+      "visible": true,
+      "tableColumn": true,
+      "filterable": true,
+      "required": true
+    },
+    {
+      "id": "category",
+      "label": "品类",
+      "visible": true,
+      "tableColumn": true,
+      "filterable": true,
+      "required": false
+    },
+    {
+      "id": "analysisStatus",
+      "label": "分析状态",
+      "visible": true,
+      "tableColumn": true,
+      "filterable": true,
+      "required": false
+    }
+  ]
+}

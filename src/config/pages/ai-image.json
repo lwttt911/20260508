@@ -1,0 +1,67 @@
+{
+  "pageId": "ai-image",
+  "title": "AI 生图",
+  "navLabel": "AI 生图",
+  "status": "published",
+  "publishedVersion": "baseline-ai-image",
+  "layout": {
+    "type": "business-page",
+    "sections": [
+      {
+        "id": "overview",
+        "type": "business-overview",
+        "title": "AI 生图工作台",
+        "subtitle": "管理 SKU 图片资产、生成风格和待审核结果",
+        "visible": true,
+        "order": 1,
+        "content": {
+          "primaryMetric": "24",
+          "primaryLabel": "待生成任务",
+          "secondaryMetric": "8",
+          "secondaryLabel": "待审核图片"
+        },
+        "actions": [
+          {
+            "id": "new-image-task",
+            "label": "新建生图任务",
+            "actionType": "openDrawer",
+            "target": "image-task-drawer"
+          }
+        ]
+      },
+      {
+        "id": "asset-table",
+        "type": "table",
+        "title": "图片资产列表",
+        "visible": true,
+        "order": 2
+      }
+    ]
+  },
+  "fields": [
+    {
+      "id": "skuName",
+      "label": "SKU 名称",
+      "visible": true,
+      "tableColumn": true,
+      "filterable": true,
+      "required": true
+    },
+    {
+      "id": "style",
+      "label": "风格",
+      "visible": true,
+      "tableColumn": true,
+      "filterable": true,
+      "required": false
+    },
+    {
+      "id": "status",
+      "label": "状态",
+      "visible": true,
+      "tableColumn": true,
+      "filterable": true,
+      "required": false
+    }
+  ]
+}

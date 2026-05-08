@@ -1,0 +1,134 @@
+{
+  "pageId": "home",
+  "title": "首页",
+  "navLabel": "首页",
+  "status": "published",
+  "publishedVersion": "baseline-home",
+  "layout": {
+    "type": "home-workbench",
+    "sections": [
+      {
+        "id": "hero",
+        "type": "hero",
+        "visible": true,
+        "order": 1,
+        "style": {
+          "height": 430,
+          "backgroundImage": "/hero-commerce-poster-wide.png",
+          "accent": "cyan"
+        },
+        "content": {
+          "eyebrow": "TikTok Growth Studio",
+          "headline": "把爆款流量变成销量资产",
+          "body": "从内容灵感、购物信号到 SKU 任务，沉淀成下一批短视频的可复用打法。"
+        },
+        "actions": [
+          {
+            "id": "import-video",
+            "label": "导入爆款视频",
+            "actionType": "navigate",
+            "target": "viral-analysis"
+          },
+          {
+            "id": "view-top",
+            "label": "查看 TOP 组合",
+            "actionType": "switchView",
+            "target": "top-combinations"
+          }
+        ]
+      },
+      {
+        "id": "content-production",
+        "type": "module-showcase",
+        "title": "AI 内容生产",
+        "subtitle": "SKU 匹配因子后生成脚本、分镜和 Prompt",
+        "visible": true,
+        "order": 2,
+        "width": "wide",
+        "style": {
+          "accent": "pink"
+        },
+        "content": {
+          "badge": "7 条待制作",
+          "metricLabel": "脚本生成中...",
+          "metricValue": "66%",
+          "buttonLabel": "继续制作"
+        },
+        "actions": [
+          {
+            "id": "continue-production",
+            "label": "继续制作",
+            "actionType": "navigate",
+            "target": "ai-image"
+          }
+        ]
+      },
+      {
+        "id": "viral-analysis",
+        "type": "module-showcase",
+        "title": "爆款分析",
+        "subtitle": "发现潜力商品和可复用执行因子",
+        "visible": true,
+        "order": 3,
+        "width": "normal",
+        "style": {
+          "accent": "green"
+        },
+        "content": {
+          "badge": "2 个在处理中",
+          "score": 92,
+          "trend": "较昨日 +12%",
+          "buttonLabel": "查看分析"
+        },
+        "actions": [
+          {
+            "id": "open-analysis",
+            "label": "查看分析",
+            "actionType": "navigate",
+            "target": "viral-analysis"
+          }
+        ]
+      },
+      {
+        "id": "sku-operations",
+        "type": "module-showcase",
+        "title": "SKU 运营",
+        "subtitle": "SKU 策略与库存分配",
+        "visible": true,
+        "order": 4,
+        "width": "normal",
+        "style": {
+          "accent": "neutral"
+        },
+        "content": {
+          "badge": "35 SKU 生效",
+          "total": 35,
+          "hot": 12,
+          "potential": 15,
+          "new": 8,
+          "buttonLabel": "进入管理"
+        },
+        "actions": [
+          {
+            "id": "open-sku",
+            "label": "进入管理",
+            "actionType": "navigate",
+            "target": "sku"
+          }
+        ]
+      },
+      {
+        "id": "status-strip",
+        "type": "status-strip",
+        "visible": true,
+        "order": 5,
+        "content": {
+          "database": "Local DB 为准",
+          "syncQueue": "飞书同步队列 5",
+          "feedback": "待回流视频 6",
+          "tags": "A1-A5 标签待计算 4"
+        }
+      }
+    ]
+  }
+}

@@ -91,6 +91,14 @@ function textContent(section: PageSection, key: string) {
   return String(section.content?.[key] ?? "");
 }
 
+function resolveAssetUrl(path: string): string {
+  // 绝对 URL 原样返回
+  if (/^https?:\/\//i.test(path) || path.startsWith("data:")) return path;
+  // 否则按 Vite 的 BASE_URL 前缀拼接，避免 /20260508/ 子路径部署下 404
+  const base = import.meta.env.BASE_URL ?? "/";
+  return `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+}
+
 function Hero({
   section,
   navigate,
@@ -100,10 +108,11 @@ function Hero({
   navigate: (pageId: PageId) => void;
   notify: (message: string) => void;
 }) {
+  const heroBg = resolveAssetUrl(section.style?.backgroundImage ?? "/hero-new.webp");
   return (
     <section
       className="hero"
-      style={{ "--hero-image": `url("${section.style?.backgroundImage ?? "/hero-new.webp"}")` } as CSSProperties}
+      style={{ "--hero-image": `url("${heroBg}")` } as CSSProperties}
     >
       <div className="hero-copy">
         <div className="eyebrow">

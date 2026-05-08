@@ -595,14 +595,14 @@ button:focus-visible {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--muted);
+  color: var(--text);
   font-size: 12px;
   font-weight: 740;
   flex-wrap: wrap;
 }
 
 .module-note-sep {
-  color: color-mix(in oklch, var(--muted), transparent 55%);
+  color: color-mix(in oklch, var(--text), transparent 60%);
 }
 
 .module-card--content {
@@ -737,7 +737,7 @@ button:focus-visible {
 }
 
 .sku-legend-inline dt {
-  color: var(--muted);
+  color: var(--text);
   font-size: 12px;
   font-weight: 780;
   margin: 0;

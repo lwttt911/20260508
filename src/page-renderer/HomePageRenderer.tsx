@@ -103,7 +103,7 @@ function Hero({
   return (
     <section
       className="hero"
-      style={{ "--hero-image": `url("${section.style?.backgroundImage ?? "/hero-commerce-poster-wide.png"}")` } as CSSProperties}
+      style={{ "--hero-image": `url("${section.style?.backgroundImage ?? "/hero-new.webp"}")` } as CSSProperties}
     >
       <div className="hero-copy">
         <div className="eyebrow">

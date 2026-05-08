@@ -23,7 +23,7 @@
   --shadow-soft: 0 14px 34px oklch(22% 0.032 250 / 0.08);
   --shadow-lift: 0 24px 56px oklch(18% 0.034 250 / 0.14);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  font-family: Inter, "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", "Noto Serif SC", ui-serif, "Songti SC", "STSong", "宋体", SimSun, Georgia, Cambria, "Times New Roman", Times, serif;
   font-synthesis-weight: none;
   font-variant-numeric: tabular-nums;
   line-height: 1.5;

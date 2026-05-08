@@ -409,7 +409,7 @@ button:focus-visible {
   background:
     linear-gradient(90deg, oklch(6.8% 0.018 250 / 0.78) 0%, oklch(7.4% 0.02 250 / 0.32) 36%, transparent 58%),
     radial-gradient(circle at 82% 52%, oklch(68% 0.18 350 / 0.1), transparent 32%),
-    var(--hero-image, none) center center / cover no-repeat,
+    var(--hero-image, none) center 18% / cover no-repeat,
     oklch(8.4% 0.02 250);
   border: 1px solid oklch(20% 0.024 250);
   box-shadow:

@@ -407,9 +407,9 @@ button:focus-visible {
   overflow: hidden;
   color: oklch(96% 0.008 250);
   background:
-    linear-gradient(90deg, oklch(6.8% 0.018 250 / 0.62) 0%, oklch(7.4% 0.02 250 / 0.38) 31%, oklch(8.4% 0.022 250 / 0.04) 56%),
+    linear-gradient(90deg, oklch(6.8% 0.018 250 / 0.78) 0%, oklch(7.4% 0.02 250 / 0.32) 36%, transparent 58%),
     radial-gradient(circle at 82% 52%, oklch(68% 0.18 350 / 0.1), transparent 32%),
-    var(--hero-image, url("/hero-new.webp")) center top / cover no-repeat,
+    var(--hero-image, url("/hero-new.webp")) right center / contain no-repeat,
     oklch(8.4% 0.02 250);
   border: 1px solid oklch(20% 0.024 250);
   box-shadow:

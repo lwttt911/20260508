@@ -169,7 +169,7 @@ src/config/page-versions/
         "order": 1,
         "style": {
           "height": 430,
-          "backgroundImage": "/hero-commerce-poster-wide.png"
+          "backgroundImage": "/hero-new.webp"
         },
         "content": {
           "eyebrow": "TikTok Growth Studio",

@@ -170,7 +170,7 @@ Create `src/config/pages/home.json`:
         "order": 1,
         "style": {
           "height": 430,
-          "backgroundImage": "/hero-commerce-poster-wide.png",
+          "backgroundImage": "/hero-new.webp",
           "accent": "cyan"
         },
         "content": {

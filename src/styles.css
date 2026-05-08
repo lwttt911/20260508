@@ -447,7 +447,7 @@ button:focus-visible {
   background: oklch(14% 0.024 250 / 0.72);
   box-shadow: 0 14px 32px oklch(0% 0 0 / 0.22);
   font-size: 12px;
-  font-weight: 850;
+  font-weight: 400;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -499,7 +499,7 @@ button:focus-visible {
   justify-content: center;
   gap: 8px;
   font-size: 13px;
-  font-weight: 850;
+  font-weight: 500;
 }
 
 .primary-button {
@@ -541,7 +541,7 @@ button:focus-visible {
     inset 0 0 0 1px oklch(100% 0 0 / 0.78);
   color: var(--muted);
   font-size: 12px;
-  font-weight: 760;
+  font-weight: 400;
 }
 
 .module-showcase,
@@ -621,16 +621,16 @@ button:focus-visible {
 .bento-head-text h2 {
   margin: 0;
   color: var(--text);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.2;
-  font-weight: 900;
-  letter-spacing: -0.005em;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 .bento-head-text small {
   color: var(--muted);
-  font-size: 11px;
-  font-weight: 760;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .bento-cta {
@@ -644,8 +644,8 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
-  font-weight: 860;
+  font-size: 13px;
+  font-weight: 400;
   box-shadow:
     inset 0 0 0 1px oklch(100% 0 0 / 0.78),
     0 8px 16px oklch(22% 0.026 250 / 0.06);
@@ -708,8 +708,8 @@ button:focus-visible {
   align-items: center;
   gap: 6px;
   color: var(--muted);
-  font-size: 11px;
-  font-weight: 820;
+  font-size: 12px;
+  font-weight: 400;
   letter-spacing: 0.01em;
 }
 
@@ -721,24 +721,24 @@ button:focus-visible {
 
 .bento-tile-value {
   color: var(--text);
-  font-size: 40px;
+  font-size: 36px;
   line-height: 1;
-  font-weight: 930;
+  font-weight: 500;
   letter-spacing: -0.015em;
 }
 
 .bento-tile-note {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .bento-tile-trend {
   color: oklch(45% 0.12 148);
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
-  font-weight: 860;
+  font-weight: 500;
 }
 
 .bento-tile--hero {
@@ -762,7 +762,7 @@ button:focus-visible {
   color: var(--text);
   font-size: 22px;
   line-height: 1;
-  font-weight: 920;
+  font-weight: 500;
   letter-spacing: -0.01em;
 }
 
@@ -777,7 +777,7 @@ button:focus-visible {
   color: var(--text);
   font-size: 13px;
   line-height: 1.25;
-  font-weight: 880;
+  font-weight: 500;
   letter-spacing: 0;
 }
 
@@ -829,7 +829,7 @@ button:focus-visible {
   min-width: 0;
   color: var(--text);
   font-size: 12px;
-  font-weight: 860;
+  font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -839,7 +839,7 @@ button:focus-visible {
   color: var(--cyan-deep);
   font-size: 11px;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 500;
   letter-spacing: 0.02em;
 }
 
@@ -859,14 +859,14 @@ button:focus-visible {
 .sku-legend-label {
   color: var(--muted);
   font-size: 12px;
-  font-weight: 820;
+  font-weight: 400;
 }
 
 .sku-legend-row strong {
   color: var(--text);
   font-size: 16px;
   line-height: 1;
-  font-weight: 920;
+  font-weight: 500;
   letter-spacing: -0.01em;
   justify-self: end;
 }
@@ -1410,7 +1410,7 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-weight: 850;
+  font-weight: 400;
   white-space: nowrap;
 }
 

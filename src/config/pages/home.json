@@ -41,17 +41,16 @@
         "id": "content-production",
         "type": "module-showcase",
         "title": "AI 内容生产",
-        "subtitle": "SKU 匹配因子后生成脚本、分镜和 Prompt",
         "visible": true,
         "order": 2,
-        "width": "wide",
+        "width": "normal",
         "style": {
           "accent": "pink"
         },
         "content": {
-          "badge": "7 条待制作",
-          "metricLabel": "脚本生成中...",
-          "metricValue": "66%",
+          "metricLabel": "脚本生成中",
+          "metricValue": "99%",
+          "note": "7 条待制作",
           "buttonLabel": "继续制作"
         },
         "actions": [
@@ -67,7 +66,6 @@
         "id": "viral-analysis",
         "type": "module-showcase",
         "title": "爆款分析",
-        "subtitle": "发现潜力商品和可复用执行因子",
         "visible": true,
         "order": 3,
         "width": "normal",
@@ -75,9 +73,9 @@
           "accent": "green"
         },
         "content": {
-          "badge": "2 个在处理中",
           "score": 92,
           "trend": "较昨日 +12%",
+          "note": "2 个处理中",
           "buttonLabel": "查看分析"
         },
         "actions": [
@@ -93,7 +91,6 @@
         "id": "sku-operations",
         "type": "module-showcase",
         "title": "SKU 运营",
-        "subtitle": "SKU 策略与库存分配",
         "visible": true,
         "order": 4,
         "width": "normal",
@@ -101,8 +98,8 @@
           "accent": "neutral"
         },
         "content": {
-          "badge": "35 SKU 生效",
           "total": 35,
+          "metricLabel": "SKU 生效",
           "hot": 12,
           "potential": 15,
           "new": 8,

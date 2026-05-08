@@ -51,6 +51,18 @@ export function HomePageRenderer({
   const modules = sections.filter((section) => section.type === "module-showcase");
   const status = sections.find((section) => section.type === "status-strip");
 
+  if (import.meta.env.DEV) {
+    const known = new Set(["hero", "module-showcase", "status-strip"]);
+    for (const section of sections) {
+      if (!known.has(section.type)) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `[HomePageRenderer] section "${section.id}" has type "${section.type}" which is not supported on the home layout and will be ignored.`,
+        );
+      }
+    }
+  }
+
   return (
     <section
       className="home-workbench"

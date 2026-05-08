@@ -4701,3 +4701,16 @@ button:focus-visible {
     justify-content: flex-start;
   }
 }
+
+
+/* =========================================================================
+   Force black text across the light content surface.
+   The dark sidebar, hero, phone/reel mock, editor toolbar, etc. use
+   hardcoded light colors (oklch 9X%) and are NOT affected because they
+   do not reference these text variables.
+   ========================================================================= */
+:root {
+  --text: #000;
+  --muted: #000;
+  --soft: #000;
+}

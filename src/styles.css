@@ -524,6 +524,12 @@ button:focus-visible {
 }
 
 .status-strip {
+  min-height: 42px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background:
@@ -531,6 +537,9 @@ button:focus-visible {
   box-shadow:
     var(--shadow-soft),
     inset 0 0 0 1px oklch(100% 0 0 / 0.78);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 760;
 }
 
 .module-showcase,
@@ -1393,18 +1402,6 @@ button:focus-visible {
   white-space: nowrap;
 }
 
-.status-strip {
-  min-height: 42px;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 760;
-}
-
 .live-indicator,
 .status-strip button {
   color: var(--text);
@@ -1567,7 +1564,7 @@ button:focus-visible {
     min-height: 360px;
     background:
       linear-gradient(90deg, oklch(6.8% 0.018 250 / 0.97) 0%, oklch(7.4% 0.02 250 / 0.86) 52%, oklch(8.4% 0.022 250 / 0.28) 100%),
-      url("/hero-new.webp") 62% top / cover no-repeat,
+      var(--hero-image, url("/hero-new.webp")) 62% top / cover no-repeat,
       oklch(8.4% 0.02 250);
   }
 

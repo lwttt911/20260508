@@ -51,6 +51,18 @@ export function HomePageRenderer({
   const modules = sections.filter((section) => section.type === "module-showcase");
   const status = sections.find((section) => section.type === "status-strip");
 
+  if (import.meta.env.DEV) {
+    const known = new Set(["hero", "module-showcase", "status-strip"]);
+    for (const section of sections) {
+      if (!known.has(section.type)) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `[HomePageRenderer] section "${section.id}" has type "${section.type}" which is not supported on the home layout and will be ignored.`,
+        );
+      }
+    }
+  }
+
   return (
     <section
       className="home-workbench"
@@ -63,16 +75,19 @@ export function HomePageRenderer({
         </EditableFrame>
       ) : null}
       <section className="bento-grid" aria-label="模块快捷区">
-        {modules.map((section) => (
-          <EditableFrame
-            key={section.id}
-            sectionId={section.id}
-            label={section.title ?? section.id}
-            style={bentoSpanStyle(section)}
-          >
-            <ModuleCard section={section} navigate={navigate} notify={notify} />
-          </EditableFrame>
-        ))}
+        {modules.map((section) => {
+          const span = bentoSpanStyle(section);
+          return (
+            <EditableFrame
+              key={section.id}
+              sectionId={section.id}
+              label={section.title ?? section.id}
+              style={span}
+            >
+              <ModuleCard section={section} navigate={navigate} notify={notify} style={span} />
+            </EditableFrame>
+          );
+        })}
       </section>
       {status ? (
         <EditableFrame sectionId={status.id} label="状态条">
@@ -142,10 +157,12 @@ function ModuleCard({
   section,
   navigate,
   notify,
+  style,
 }: {
   section: PageSection;
   navigate: (pageId: PageId) => void;
   notify: (message: string) => void;
+  style?: CSSProperties;
 }) {
   const accent = section.style?.accent ?? "neutral";
   const action = firstAction(section);
@@ -156,7 +173,7 @@ function ModuleCard({
   const isWide = section.width === "wide";
 
   return (
-    <article className={`bento-card bento-card--${cardClass} ${isWide ? "bento-card--wide" : ""}`}>
+    <article className={`bento-card bento-card--${cardClass} ${isWide ? "bento-card--wide" : ""}`} style={style}>
       <header className="bento-head">
         <span className={`module-icon module-icon--${iconClass}`}>
           <Icon aria-hidden="true" />

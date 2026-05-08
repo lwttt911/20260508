@@ -43,15 +43,20 @@
         "title": "AI 内容生产",
         "visible": true,
         "order": 2,
-        "width": "normal",
+        "width": "wide",
         "style": {
           "accent": "pink"
         },
         "content": {
           "metricLabel": "脚本生成中",
           "metricValue": "99%",
-          "note": "7 条待制作",
-          "buttonLabel": "继续制作"
+          "note": "今日合计 7 条待制作",
+          "buttonLabel": "继续制作",
+          "queueScript": 7,
+          "queueImage": 3,
+          "queueReview": 2,
+          "nextTask": "SKU-A12 · 30s 剧情脚本",
+          "eta": "预计 8 分钟"
         },
         "actions": [
           {
@@ -76,7 +81,10 @@
           "score": 92,
           "trend": "较昨日 +12%",
           "note": "2 个处理中",
-          "buttonLabel": "查看分析"
+          "buttonLabel": "查看分析",
+          "top1Title": "宠物清洁 · 一分钟种草",
+          "top1Score": "A1·94",
+          "newInsights": 5
         },
         "actions": [
           {
@@ -103,7 +111,9 @@
           "hot": 12,
           "potential": 15,
           "new": 8,
-          "buttonLabel": "进入管理"
+          "buttonLabel": "进入管理",
+          "gmvToday": "¥18.4w",
+          "gmvDelta": "+23%"
         },
         "actions": [
           {

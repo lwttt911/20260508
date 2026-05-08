@@ -1,17 +1,8 @@
 import type { CSSProperties } from "react";
-import { BadgeCheck, Boxes, Clapperboard, FileText, LineChart, Rocket, Sparkles } from "lucide-react";
+import { ArrowRight, BadgeCheck, Boxes, Clapperboard, FileText, LineChart, Rocket, Sparkles } from "lucide-react";
 import { runPageAction } from "../config/pageActions";
 import type { PageAction, PageConfig, PageId, PageSection } from "../config/pageTypes";
 import { EditableFrame } from "../page-editor/EditableFrame";
-
-const scriptSegments = [
-  { id: "01", duration: "3.2s" },
-  { id: "02", duration: "2.8s" },
-  { id: "03", duration: "3.6s" },
-  { id: "04", duration: "2.4s" },
-];
-
-const categorySignals = ["瓶", "耳机", "椅", "灯"];
 
 function sectionSizingStyle(section: PageSection): CSSProperties {
   const style = {
@@ -132,7 +123,6 @@ function ModuleCard({
   const cardClass =
     section.id === "content-production" ? "content" : section.id === "viral-analysis" ? "analysis" : "sku";
   const iconClass = accent === "green" ? "green" : accent === "pink" ? "rose" : "violet";
-  const badgeClass = accent === "green" ? "module-badge--green" : accent === "neutral" ? "module-badge--neutral" : "";
 
   return (
     <article className={`module-card module-card--${cardClass}`} style={style}>
@@ -140,11 +130,7 @@ function ModuleCard({
         <span className={`module-icon module-icon--${iconClass}`}>
           <Icon aria-hidden="true" />
         </span>
-        <div>
-          <h2>{section.title}</h2>
-          <p>{section.subtitle}</p>
-        </div>
-        <span className={`module-badge ${badgeClass}`}>{textContent(section, "badge")}</span>
+        <h2>{section.title}</h2>
       </div>
 
       {section.id === "content-production" ? <ProductionBody section={section} /> : null}
@@ -154,6 +140,7 @@ function ModuleCard({
       {action ? (
         <button className="module-cta" onClick={() => runPageAction(action, { navigate, notify })}>
           {textContent(section, "buttonLabel") || action.label}
+          <ArrowRight aria-hidden="true" />
         </button>
       ) : null}
     </article>
@@ -161,83 +148,67 @@ function ModuleCard({
 }
 
 function ProductionBody({ section }: { section: PageSection }) {
+  const value = textContent(section, "metricValue");
+  const percent = Number.parseFloat(value) || 0;
   return (
-    <>
-      <div className="production-progress">
-        <div className="module-metric-row">
-          <strong>{textContent(section, "metricLabel")}</strong>
-          <span>{textContent(section, "metricValue")}</span>
-        </div>
-        <div className="progress-track" aria-label={`脚本生成进度 ${textContent(section, "metricValue")}`}>
-          <span />
-        </div>
+    <div className="module-body">
+      <div className="module-stat">{value}</div>
+      <div className="module-note">
+        {textContent(section, "metricLabel")}
+        <span className="module-note-sep" aria-hidden="true">·</span>
+        {textContent(section, "note")}
       </div>
-
-      <div className="segment-grid" aria-label="脚本分镜片段">
-        {scriptSegments.map((segment) => (
-          <div className="segment-tile" key={segment.id}>
-            <span>{segment.id}</span>
-            <strong>{segment.duration}</strong>
-          </div>
-        ))}
-        <button className="segment-add" aria-label="新增分镜片段">
-          +
-        </button>
+      <div className="progress-track" aria-label={`脚本生成进度 ${value}`}>
+        <span style={{ width: `${Math.min(100, Math.max(0, percent))}%` }} />
       </div>
-    </>
+    </div>
   );
 }
 
 function AnalysisBody({ section }: { section: PageSection }) {
   return (
-    <>
-      <div className="signal-tabs" aria-label="高潜商品信号">
-        {categorySignals.map((item) => (
-          <button key={item}>{item}</button>
-        ))}
+    <div className="module-body">
+      <div className="module-stat">{textContent(section, "score")}</div>
+      <div className="module-note">
+        趋势 {textContent(section, "trend")}
+        <span className="module-note-sep" aria-hidden="true">·</span>
+        {textContent(section, "note")}
       </div>
-
-      <div className="trend-panel">
-        <div>
-          <span>趋势评分</span>
-          <strong>{textContent(section, "trend")}</strong>
-        </div>
-        <div className="trend-score">{textContent(section, "score")}</div>
-      </div>
-
       <div className="mini-bars" aria-label="趋势小图">
         {[34, 48, 39, 57, 50].map((height, index) => (
           <span style={{ "--bar-height": `${height}px` } as CSSProperties} key={index} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
 function SkuBody({ section }: { section: PageSection }) {
-  const rows: Array<[string, string | number | boolean | undefined]> = [
-    ["热销", section.content?.hot],
-    ["潜力", section.content?.potential],
-    ["新品", section.content?.new],
-  ];
+  const hot = String(section.content?.hot ?? "");
+  const potential = String(section.content?.potential ?? "");
+  const fresh = String(section.content?.new ?? "");
 
   return (
-    <div className="sku-chart-row">
-      <div className="donut-chart" aria-label="SKU 生效分布">
+    <div className="module-body">
+      <div className="module-stat">{textContent(section, "total")}</div>
+      <div className="module-note">{textContent(section, "metricLabel")}</div>
+      <dl className="sku-legend-inline" aria-label="SKU 分布">
         <div>
-          <strong>{textContent(section, "total")}</strong>
-          <span>SKU 生效</span>
+          <span className="legend-dot legend-dot--1" aria-hidden="true" />
+          <dt>热销</dt>
+          <dd>{hot}</dd>
         </div>
-      </div>
-      <div className="sku-legend">
-        {rows.map(([label, value], index) => (
-          <div key={label}>
-            <span className={`legend-dot legend-dot--${index + 1}`} />
-            <strong>{label}</strong>
-            <em>{String(value ?? "")}</em>
-          </div>
-        ))}
-      </div>
+        <div>
+          <span className="legend-dot legend-dot--2" aria-hidden="true" />
+          <dt>潜力</dt>
+          <dd>{potential}</dd>
+        </div>
+        <div>
+          <span className="legend-dot legend-dot--3" aria-hidden="true" />
+          <dt>新品</dt>
+          <dd>{fresh}</dd>
+        </div>
+      </dl>
     </div>
   );
 }
